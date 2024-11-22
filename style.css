@@ -1,0 +1,296 @@
+/* General Styles */
+body {
+  background-color: #ffffff; /* White background */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black; /* Slightly transparent background */
+  padding: 1.4em 0 1.6em 0;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  transition: top 0.3s; /* Smooth transition for hiding/showing */
+}
+
+.home-page .nav-bar {
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent background */
+}
+
+/* push the main content down for other pages */
+body:not(.home-page) {
+  padding-top: 66px;
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar li {
+  padding: 0 10px 0 10px;
+}
+
+.nav-bar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+}
+
+/* On hover, expand the underline */
+.nav-bar a::after {
+  content: "";
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0%;
+  transition: all 0.15s;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.nav-bar a:hover::after {
+  width: 100%;
+}
+
+/* Content Section */
+.content {
+  color: #000000; /* Text color */
+  text-align: center; /* Centered text */
+}
+
+/* Title Image Container */
+.title-img-container {
+  width: 100%; /* Full width of the screen */
+  height: 100vh; /* Full height of the viewport */
+  position: relative; /* Necessary for positioning the text inside */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.title-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+/* Overlay styling */
+.title-img-container .overlay {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* White text color */
+}
+
+.title-img-container .overlay h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 30px 0;
+}
+
+.title-img-container .overlay p {
+  font-size: 1rem;
+  font-weight: lighter;
+  margin: 0;
+  font-family: Arial Light, sans-serif;
+}
+
+/* Nav Cards */
+/* Section and Layout */
+.nav-cards {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+
+.card__side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.card__side--front {
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-position: top;
+  object-fit: cover;
+  filter: brightness(0.65);
+}
+
+.card__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 3px 5px rgba(0, 0, 0);
+}
+
+.card__description {
+  font-size: 1rem;
+  padding: 0 2rem;
+}
+
+.card__side--back {
+  transform: rotateY(180deg);
+  background: #000000;
+  color: #fff;
+}
+
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+
+-------------
+
+/* Profile Section */
+.profile-row {
+  text-align: center; /* Centers the content within the container */
+}
+.profile-row > div {
+  display: inline-block; /* Makes each child behave like an inline element, but with block-level styling */
+  vertical-align: top; /* Aligns items at the top */
+  margin: 0 1rem; /* Adds spacing between items */
+}
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Insights Section */
+.insights {
+  text-align: left;
+}
+.insights li {
+  padding: 0.5em;
+}
+
+/* Visual Container */
+.visual {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 10em;
+}
+
+/* Charts */
+.chart-titles {
+  padding: 1em;
+  font-weight: bold;
+}
+.chart-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Tableau Placeholder */
+.tableauPlaceholder {
+  padding-bottom: 1em;
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* Footer Bar */
+.footer-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 2em;
+}
+.footer-bar li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.footer-bar a {
+  color: #000000; /* Footer link color */
+  text-decoration: none;
+}
+.footer-bar a:hover {
+  color: #cccccc; /* Light gray on hover */
+}
+
+/* Specific Styles for Index Page */
+.intro {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.chart-container {
+  width: 50%;
+  float: left;
+}
+
+/* Specific Styles for History Page */
+.visuals-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+h1 {
+  padding-bottom: 1em;
+}
+h3 {
+  padding-bottom: 2em;
+  width: 75%;
+  margin: 0 auto;
+}
