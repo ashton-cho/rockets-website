@@ -109,8 +109,15 @@ body:not(.home-page) {
   font-family: Arial Light, sans-serif;
 }
 
+/* Home Page Intro */
+.intro {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
 /* Nav Cards */
-/* Section and Layout */
 .nav-cards {
   padding: 2rem 0;
   text-align: center;
@@ -270,11 +277,7 @@ body:not(.home-page) {
 }
 
 /* Specific Styles for Index Page */
-.intro {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
+
 .chart-container {
   width: 50%;
   float: left;
