@@ -1,7 +1,9 @@
 /* General Styles */
-body {
-  background-color: #ffffff; /* White background */
-  font-family: Arial, sans-serif;
+.home-page {
+  background-color: black; /* White background */
+  color: white;
+  text-align: center; /* Centered text */
+  font-family: Arial Light, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -40,6 +42,7 @@ body:not(.home-page) {
 }
 
 .nav-bar a {
+  font-family: Arial, sans-serif;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
@@ -62,12 +65,6 @@ body:not(.home-page) {
 
 .nav-bar a:hover::after {
   width: 100%;
-}
-
-/* Content Section */
-.content {
-  color: #000000; /* Text color */
-  text-align: center; /* Centered text */
 }
 
 /* Title Image Container */
@@ -106,38 +103,241 @@ body:not(.home-page) {
   font-size: 1rem;
   font-weight: lighter;
   margin: 0;
-  font-family: Arial Light, sans-serif;
 }
 
-/* Home Page Intro */
-.intro {
+/* Rocket Image Container */
+.rocket-img-container {
+  position: relative;
+  height: 100vh;
+}
+
+.rocket-img-container img {
+  width: 100%;
+  height: 100vh;
+  filter: brightness(50%);
+}
+
+.intro-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white; /* White text color */
+  text-align: center;
   width: 80%;
-  margin: 0 auto;
-  text-align: center;
   font-size: 1.5em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow effect */
 }
 
-/* Nav Cards */
-.nav-cards {
-  padding: 2rem 0;
+.box {
+  width: 100%;
+  height: 4em;
+}
+
+---
+
+/* General Scroll Content Styling */
+.scroll-content {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px; /* Optional space for the bottom image */
+  height: 100vh; /* Full viewport height for scrollable area */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.scroll-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0 20px;
+  scroll-snap-align: start;
+  opacity: 0; /* Make sections invisible by default */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Image Classes */
+.iss-image,
+.spacex-rocket-image,
+.mars-image,
+.space-data-image {
+  flex: 0 0 33.33%; /* Control image width relative to section */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the image fits properly */
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Position the Images */
+.iss-image {
+  position: absolute;
+  max-width: 1000px;
+  left: -15%; /* First image on the left */
+}
+
+.spacex-rocket-image {
+  position: absolute;
+  max-width: 400px;
+  right: 10%; /* Second image on the right */
+}
+
+.mars-image {
+  position: absolute;
+  max-width: 1000px;
+  left: -20%; /* Third image on the left */
+}
+
+.space-data-image {
+  position: absolute;
+  max-width: 600px;
+  right: 0;
+}
+
+/* Text Content */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all children horizontally */
+  justify-content: center; /* Center all children vertically */
   text-align: center;
 }
 
-.row {
+.text-content h3 {
+  font-size: 1.4em;
+}
+
+.text-content p {
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+
+.scroll-section h3,
+.scroll-section p {
+  opacity: 0;
+  transform: translateY(50px); /* Initial hidden with a slide-up effect */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Active Section - Make Elements Visible */
+.scroll-section.active {
+  opacity: 1;
+}
+
+.scroll-section.active img,
+.scroll-section.active h3,
+.scroll-section.active p {
+  opacity: 1;
+  transform: translateY(0); /* Reveal content */
+}
+
+/* Position the Text */
+.history-section {
+  position: absolute;
+  left: 42%;
+  padding: 0 8em;
+}
+
+.commercial-section {
+  position: absolute;
+  right: 35%;
+  padding: 0 12em;
+}
+
+.future-section {
+  position: absolute;
+  left: 25%;
+  padding: 0 16em;
+}
+
+.visualizations-section {
+  position: absolute;
+  right: 35%;
+  padding: 0 11em;
+}
+
+---
+
+/* Make sure body take full height */
+body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+}
+
+/* Nav Cards Section */
+.nav-cards {
+  position: relative; /* Positions the video and cards relative to this container */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width of the viewport */
+  overflow: hidden; /* Hide any overflowing content */
+  text-align: center;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: center;
+}
+
+/* Earth image container */
+.earth-container {
+  position: absolute;
+  bottom: 0; /* Align the container to the bottom */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(
+    -50%
+  ); /* Adjust the centering since we used left: 50% */
+  width: 100%; /* Full width of the container */
+  height: 25%; /* Display only the top 25% of the image */
+  overflow: hidden; /* Hide the part of the image that goes out of the container */
+  z-index: -1; /* Keep the container behind the cards */
+}
+
+/* Earth image itself */
+.earth {
+  position: absolute;
+  top: 0; /* Align the top of the image with the top of the container */
+  left: 0;
+  width: 100%; /* Make the image take up the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  transform-origin: center center; /* Set the center of the image as the point of rotation */
+  animation: rotate 60s linear infinite; /* Infinite rotation animation */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Rotation animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Row for Cards */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Vertically center the cards */
+  height: 100%; /* Ensure the row spans the full height of .nav-cards */
+  gap: 4rem;
+  position: relative; /* Keep the cards above the video */
+  z-index: 1; /* Keep the row content (cards) on top */
+  transform: translateY(-8em); /* Adjust the negative value to shift up */
 }
 
 .card {
   perspective: 1000px;
-  width: 300px;
-  height: 400px;
+  width: 25vw; /* Adjust the card width */
+  height: 55vh; /* Adjust the card height */
   position: relative;
+  z-index: 2;
+  border-radius: 12px; /* Card styling */
 }
 
+/* Card Faces */
 .card__side {
   width: 100%;
   height: 100%;
@@ -152,51 +352,67 @@ body:not(.home-page) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff;
 }
 
+/* Front Side of the Card */
 .card__side--front {
   position: relative;
 }
 
+/* Back Side of the Card */
+.card__side--back {
+  transform: rotateY(180deg);
+  background: #000; /* Darker black for differentiation */
+  color: #fff;
+}
+
+/* Card Back Hover Effect */
+.card:hover .card__side--back {
+  transform: rotateY(0);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Adds a glow with matching border radius */
+  border-radius: 10px; /* Ensures glow respects card's rounded corners */
+}
+
+/* Card Front Hover Effect */
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Adds a glow with matching border radius */
+  border-radius: 10px; /* Ensures glow respects card's rounded corners */
+}
+
+/* Card Image */
 .card__image {
   width: 100%;
   height: 100%;
-  object-position: top;
   object-fit: cover;
   filter: brightness(0.65);
 }
 
+/* Card Title */
 .card__title {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
+  font-size: 2.5vw;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 3px 5px rgba(0, 0, 0);
 }
 
+/* Card Description */
 .card__description {
-  font-size: 1rem;
-  padding: 0 2rem;
-}
-
-.card__side--back {
-  transform: rotateY(180deg);
-  background: #000000;
-  color: #fff;
-}
-
-.card:hover .card__side--front {
-  transform: rotateY(-180deg);
-}
-
-.card:hover .card__side--back {
-  transform: rotateY(0);
+  font-size: 2vh;
+  padding: 0 3rem;
+  font-weight: lighter;
+  text-align: center;
 }
 
 -------------
+
+/* General Formatting*/
+.content {
+  text-align: center;
+}
 
 /* Profile Section */
 .profile-row {
@@ -291,6 +507,7 @@ body:not(.home-page) {
 }
 h1 {
   padding-bottom: 1em;
+  text-align: center;
 }
 h3 {
   padding-bottom: 2em;
