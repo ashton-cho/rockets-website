@@ -455,18 +455,26 @@ body {
   color: #cccccc; /* Light gray on hover */
 }
 
-/* headers */
-h1 {
+/* Page Header */
+.page-header {
   padding-bottom: 1em;
   text-align: center;
   font-family: Arial, sans-serif;
   font-weight: bolder;
+  font-size: 2.5em; /* Adjust font size as needed */
+  margin-top: 1.5em;
 }
 
-h4 {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-weight: bolder;
+/* Description Text */
+.description-text {
+  padding-bottom: 1em;
+  width: 65%;
+  margin: 0 auto;
+  font-family: Arial Light, sans-serif;
+  font-weight: lighter;
+  font-size: 1.2em; /* Adjust font size as needed */
+  line-height: 1.5; /* To add more space between lines for readability */
+  text-align: center; /* Centers the text */
 }
 
 .description-text {
@@ -477,7 +485,7 @@ h4 {
   font-weight: lighter;
 }
 
-#data-source {
+.data-source {
   padding-bottom: 3em;
   text-align: center;
   font-family: Arial Light, sans-serif;
@@ -496,6 +504,12 @@ h4 {
   font-family: Arial;
   font-weight: bolder;
   padding-top: 3em;
+}
+
+.insights-header {
+  text-align: center;
+  font-family: Arial;
+  font-weight: bolder;
 }
 
 .insight-text {
