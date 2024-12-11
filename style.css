@@ -433,56 +433,19 @@ body {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
-}
-
-/* Links */
-.link {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* Insights Section */
-.insights {
-  text-align: left;
-}
-.insights li {
-  padding: 0.5em;
-}
-
-/* Visual Container */
-.visual {
-  width: 75%;
-  margin: 0 auto;
-  padding-bottom: 10em;
-}
-
-/* Charts */
-.chart-titles {
-  padding: 1em;
-  font-weight: bold;
-}
-.chart-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-/* Tableau Placeholder */
-.tableauPlaceholder {
-  padding-bottom: 1em;
-  width: 75%;
-  margin: 0 auto;
+  font-family: Arial Light, sans-serif;
+  font-weight: lighter;
 }
 
 /* Footer Bar */
-.footer-bar ul {
+.footer-bar {
   list-style: none;
   margin: 0;
-  padding: 2em;
-}
-.footer-bar li {
-  display: inline-block;
-  margin-right: 20px;
+  padding: 1.5em;
+  text-align: center;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 1em;
 }
 .footer-bar a {
   color: #000000; /* Footer link color */
@@ -492,25 +455,69 @@ body {
   color: #cccccc; /* Light gray on hover */
 }
 
-/* Specific Styles for Index Page */
-
-.chart-container {
-  width: 50%;
-  float: left;
-}
-
-/* Specific Styles for History Page */
-.visuals-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
+/* headers */
 h1 {
   padding-bottom: 1em;
   text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
 }
-h3 {
-  padding-bottom: 2em;
-  width: 75%;
+
+h4 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.description-text {
+  padding-bottom: 1em;
+  width: 65%;
   margin: 0 auto;
+  font-family: Arial Light, sans-serif;
+  font-weight: lighter;
+}
+
+#data-source {
+  padding-bottom: 3em;
+  text-align: center;
+  font-family: Arial Light, sans-serif;
+  font-weight: lighter;
+}
+
+.custom-line {
+  width: 65%;
+  margin: 0 auto; /* Centers the line horizontally */
+  border: 0.5px solid #625c5c83; /* Black line, adjust color as needed */
+  margin-top: 3em; /* Adds spacing below the line */
+}
+
+.figure {
+  text-align: center;
+  font-family: Arial;
+  font-weight: bolder;
+  padding-top: 3em;
+}
+
+.insight-text {
+  padding-bottom: 1em;
+  width: 65%;
+  margin: 0 auto;
+  font-family: Arial Light, sans-serif;
+  font-weight: lighter;
+}
+
+/* Visual Container */
+.visual {
+  margin: 0 auto;
+  padding-bottom: 5em;
+}
+
+/* Tableau Placeholder */
+.tableauPlaceholder {
+  padding-bottom: 1em;
+  margin: 0 auto;
+}
+
+#viz1733898220967 {
+  padding-top: 3em;
 }
