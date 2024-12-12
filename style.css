@@ -520,6 +520,19 @@ body {
   font-weight: lighter;
 }
 
+.insight-subheading {
+  padding: 1em 0 0.5em 0;
+}
+
+#insight-format {
+  padding-top: 0;
+}
+
+.padded-text {
+  padding-left: 3em;
+  padding-bottom: 0.5em;
+}
+
 /* Visual Container */
 .visual {
   margin: 0 auto;
